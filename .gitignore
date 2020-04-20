@@ -1,0 +1,7 @@
+# Ignoring unwanted iterated files
+*~
+*#
+# Ignroing unwanted main files
+*-main.py
+*-main.c
+*-main.js
