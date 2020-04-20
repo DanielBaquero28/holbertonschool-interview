@@ -2,6 +2,6 @@
 *~
 *#
 # Ignroing unwanted main files
-*-main.py
+main_*.py
 *-main.c
 *-main.js
