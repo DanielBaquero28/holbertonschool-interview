@@ -5,3 +5,4 @@
 main_*.py
 *-main.c
 *-main.js
+__pycache__/
