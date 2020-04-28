@@ -1,2 +1,4 @@
 # Ignoring unwanted file
 linked_lists.c
+# Ignoring executable
+insert
