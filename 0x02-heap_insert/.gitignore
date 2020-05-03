@@ -1,0 +1,5 @@
+# Ignoring unwanted .c file to print the binary tree
+binary_tree_print.c
+# Ignoring unwanted executables
+0-node
+1-heap_insert
