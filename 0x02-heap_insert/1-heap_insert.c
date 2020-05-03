@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * head_insert - Inserts a value into the Max Binary Heap
+ * heap_insert - Inserts a value into the Max Binary Heap
  * @root: Pointer that points to the pointer to the head node
  * @value: Value assigned to the new node inserted
  *
