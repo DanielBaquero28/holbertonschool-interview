@@ -9,7 +9,7 @@ def minOperations(n):
     paste_char = 0
     flag = 0
 
-    if (n <= 1):
+    if (n <= 1 or type(n != int)):
         return (0)
     while ((char * 2) <= n):
         op += 2
