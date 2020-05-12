@@ -5,29 +5,14 @@
 def minOperations(n):
     """ Finds the minimum number of operations to get n H """
     op = 0
-    char = 1
-    paste_char = 0
-    flag = 0
+    paste_char = 2
 
     if (n <= 1 or type(n) != int):
         return (0)
-    while ((char * 2) <= n):
-        op += 2
-        paste_char = char
-        char *= 2
-        if (char == n):
-            flag = 1
-            break
-    while (char < n):
-        if ((char + paste_char) <= n):
-            op += 1
-            char += paste_char
-            if (char == n):
-                flag = 1
-                break
-        elif ((char + paste_char) > n):
-            flag = 0
-            break
-    if (flag == 1):
-        return (op)
-    return (0)
+    while (n != 1):
+        if (n % paste_char) == 0:
+            n /= paste_char
+            op += paste_char
+        else:
+            paste_char += 1
+    return (op)
