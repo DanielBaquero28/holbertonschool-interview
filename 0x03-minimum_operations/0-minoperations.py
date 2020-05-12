@@ -25,7 +25,7 @@ def minOperations(n):
             if (char == n):
                 flag = 1
                 break
-        if ((char + paste_char) > n):
+        elif ((char + paste_char) > n):
             flag = 0
             break
     if (flag == 1):
