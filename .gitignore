@@ -3,6 +3,7 @@
 *#
 # Ignroing unwanted main files
 main_*.py
+*-main.py
 *-main.c
 *-main.js
 __pycache__/
