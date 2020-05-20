@@ -6,7 +6,6 @@
  * @grid2: Second grid
  * Return: Nothing
  */
-
 void sum_grids(int grid1[3][3], int grid2[3][3])
 {
 	int i, j;
@@ -23,7 +22,6 @@ void sum_grids(int grid1[3][3], int grid2[3][3])
  *
  * Return: Nothing
  */
-
 void print_grid(int grid[3][3])
 {
 	int i, j;
@@ -46,7 +44,6 @@ void print_grid(int grid[3][3])
  *
  * Return: 1 if it's stable, else 0
  */
-
 int stable_grid(int grid[3][3])
 {
 	int i, j;
@@ -74,14 +71,12 @@ void tuple_grid(int grid[3][3])
 		{0, 0, 0},
 		{0, 0, 0},
 		{0, 0, 0}};
-
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
 		{
 			if (grid[i][j] > 3)
-			{
-				grid[i][j] -= 4;
+			{   grid[i][j] -= 4;
 				if ((i + 1) >= 0 && (i + 1) < 3)
 					r_grid[i + 1][j] += 1;
 				if ((j + 1) >= 0 && (j + 1) < 3)
@@ -95,7 +90,6 @@ void tuple_grid(int grid[3][3])
 	}
 	sum_grids(grid, r_grid);
 }
-
 /**
  * sandpiles_sum - Adds two sandpiles
  * @grid1: First grid
@@ -103,7 +97,6 @@ void tuple_grid(int grid[3][3])
  *
  * Return: Nothing
  */
-
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	sum_grids(grid1, grid2);
