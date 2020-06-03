@@ -3,21 +3,20 @@
 import sys
 
 
+def print_log(status_dict):
+        """ Method that prints the parsed log """
+        print('File size: {}'.format(size))
+        for status, stat in sorted(status_dict.items()):
+            if stat != 0:
+                print('{}: {}'.format(status, stat))
+
 if __name__ == '__main__':
-    """ Main entrypoint """
     size = 0
     status_stats = {'200': 0, '301': 0, '400': 0, '401': 0,
                     '403': 0, '404': 0, '405': 0, '500': 0}
-    num_line = 1
-
-    def print_log(status_dict):
-        """ Method that prints the parsed log """
-        print("File size: {}".format(size))
-        for status, stat in sorted(status_dict.items()):
-            if stat != 0:
-                print("{}: {}".format(status, stat))
 
     try:
+        num_line = 0
         for line in sys.stdin:
             args = line.split()
             if len(args) > 6:
@@ -33,4 +32,3 @@ if __name__ == '__main__':
 
     except KeyboardInterrupt:
         print_log(status_stats)
-        raise
