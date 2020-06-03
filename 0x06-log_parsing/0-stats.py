@@ -31,4 +31,4 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print_log(status_stats)
         raise
-    print_log(status_stats)
+    """ print_log(status_stats)"""
