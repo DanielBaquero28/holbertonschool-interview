@@ -18,12 +18,11 @@ if __name__ == '__main__':
                 print("{}: {}".format(status, stat))
 
     try:
-        for stdin_line in sys.stdin:
-            args = stdin_line.split(" ")
+        for line in sys.stdin:
+            args = line.split(" ")
             if len(args) > 6:
                 status = args[-2]
                 if status in status_stats.keys():
-                    """ index = list(status_stats).index(status) """
                     status_stats[status] += 1
                 size += int(args[-1][:])
                 if num_line % 10 == 0:
