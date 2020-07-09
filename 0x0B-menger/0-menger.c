@@ -9,12 +9,13 @@
 void menger(int level)
 {
 	int size_sponge, tmp_i, tmp_j;
+	int i, j;
 	char c;
 
 	size_sponge = pow(3, level);
-	for (int i = 0; i < size_sponge; i++)
+	for (i = 0; i < size_sponge; i++)
 	{
-		for (int j = 0; j < size_sponge; j++)
+		for (j = 0; j < size_sponge; j++)
 		{
 			c = '#';
 			tmp_i = i;
