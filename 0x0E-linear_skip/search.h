@@ -3,7 +3,6 @@
 
 /** Libraries */
 #include <stdio.h>
-#include <stddef.h>
 #include <stdlib.h>
 
 /**
@@ -26,7 +25,6 @@ typedef struct skiplist_s
 } skiplist_t;
 
 /** Prototypes */
-
 /** Primary */
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
