@@ -1,0 +1,3 @@
+# Ignoring unwanted files
+node_modules/
+*.json
