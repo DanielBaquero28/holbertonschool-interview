@@ -1,4 +1,4 @@
-html>
+<html>
 <h1>Project: Rain</h1>
 <p><strong>In this project we'll cover an exercise done in python3.</strong></p>
 <body>
