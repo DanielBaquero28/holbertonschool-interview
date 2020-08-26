@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+""" Function that returns the maximum amount of rain retained """
 
 
 def rain(walls):
-    """ Finds the amount of rain retained between walls of different heights"""
+    """ Finds the amount of rain retained between walls of different heights
+"""
     if (len(walls) <= 0):
         return (0)
     rain = 0
