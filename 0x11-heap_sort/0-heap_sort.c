@@ -1,4 +1,8 @@
 #include "sort.h"
+
+void change_value(int *x, int *y);
+void sort_in_heap(int *array, size_t i, size_t heap_size, size_t array_size);
+
 /**
  * heap_sort - Sorts an array of integers using the heap sort algorithm.
  * @array: Pointer to the array of integers.
@@ -9,23 +13,23 @@
 
 void heap_sort(int *array, size_t size)
 {
-    size_t i;
-    size_t array_size;
+	size_t i;
+	size_t array_size;
 
-    if (array_size)
-    {
-        array_size = size;
-        for (i = size/ 2 - 1; (int)i >= 0; i--)
-        {
-            sort_in_heap(array, i, size, array_size);
-        }
-        for (i = size - 1; i > 0; i--)
-        {
-            change_value(&array[0], &array[i]);
-            print_array(array, size);
-            sort_in_heap(array, 0, i, array_size);
-        }
-    }
+	array_size = size;
+	if (array_size)
+	{
+		for (i = size / 2 - 1; (int)i >= 0; i--)
+		{
+			sort_in_heap(array, i, size, array_size);
+		}
+		for (i = size - 1; i > 0; i--)
+		{
+			change_value(&array[0], &array[i]);
+			print_array(array, size);
+			sort_in_heap(array, 0, i, array_size);
+		}
+	}
 }
 
 /**
@@ -38,12 +42,14 @@ void heap_sort(int *array, size_t size)
 
 void change_value(int *x, int *y)
 {
-    int x, y;
+	int ax, ay;
 
-    x = *x;
-    y = *y;
+	ax = *x;
+	ay = *y;
 
-    return;
+	*x = ay;
+	*y = ax;
+
 }
 
 /**
@@ -58,19 +64,19 @@ void change_value(int *x, int *y)
 
 void sort_in_heap(int *array, size_t i, size_t heap_size, size_t array_size)
 {
-    size_t left = 2 * (i + 1);
-    size_t right = 2 * (i + 2);
-    size_t tail_heap = i;
+	size_t left = 2 * i + 1;
+	size_t right = 2 * i + 2;
+	size_t tail_heap = i;
 
-    if (left < heap_size && array[left] > array[tail_heap])
-        tail_heap = left;
-    if (right < heap_size && array[right] > array[tail_heap])
-        tail_heap = right;
+	if (left < heap_size && array[left] > array[tail_heap])
+		tail_heap = left;
+	if (right < heap_size && array[right] > array[tail_heap])
+		tail_heap = right;
 
-    if (tail_heap != i)
-    {
-        change_value(&array[i], &array[tail_heap]);
-        print_array(array, array_size);
-        sort_in_heap(array, tail_heap, heap_size, array_size);
-    }
+	if (tail_heap != i)
+	{
+		change_value(&array[i], &array[tail_heap]);
+		print_array(array, array_size);
+		sort_in_heap(array, tail_heap, heap_size, array_size);
+	}
 }
