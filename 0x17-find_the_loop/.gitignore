@@ -1,3 +1,3 @@
 # Ignoring unwanted files to be pushed
 main
-libloop2.a
+libloop.a
