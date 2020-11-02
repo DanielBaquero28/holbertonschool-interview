@@ -1,0 +1,3 @@
+# Ignoring unwanted files to be pushed to repo
+print_array.c
+merge
