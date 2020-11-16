@@ -40,12 +40,10 @@ List *add_node_end(List **list, char *str)
 	List *new_node;
 	List *tail_node;
 
-	/** Checking if list doesn't exist */
-	if (list == NULL)
-		return (NULL);
-
 	/** Creating a new node  of type List */
 	new_node = create_node(str);
+	if(!new_node)
+		return (NULL);
 
 	/** Checking if list is empty */
 	if (*list == NULL)
@@ -53,16 +51,17 @@ List *add_node_end(List **list, char *str)
 		new_node->next = new_node;
 		new_node->prev = new_node;
 		*list = new_node;
-		return (new_node);
 	}
+	else
+	{
+		/** Identifying last node */
+		tail_node = (*list)->prev;
 
-	/** Identifying last node */
-	tail_node = (*list)->prev;
-
-	new_node->next = *list;
-	(*list)->prev = new_node;
-	new_node->prev = tail_node;
-	tail_node->next = new_node;
+		new_node->next = *list;
+		(*list)->prev = new_node;
+		new_node->prev = tail_node;
+		tail_node->next = new_node;
+	}
 
 	return (new_node);
 }
@@ -79,12 +78,10 @@ List *add_node_begin(List **list, char *str)
 	List *new_node;
 	List *tail_node;
 
-	/** Checking if list doesn't exist */
-	if (!list)
-		return (NULL);
-
 	/** Creating a new node of type List */
 	new_node = create_node(str);
+	if (!new_node)
+		return (NULL);
 
 	/** Checking if list is empty */
 	if (*list == NULL)
@@ -92,19 +89,19 @@ List *add_node_begin(List **list, char *str)
 		new_node->next = new_node;
 		new_node->prev = new_node;
 		*list = new_node;
-		return (new_node);
 	}
+	else
+	{
+		/** Identifying last node */
+		tail_node = (*list)->prev;
 
+		new_node->next = *list;
+		(*list)->prev = new_node;
+		new_node->prev = tail_node;
+		tail_node->next = new_node;
 
-	/** Identifying last node */
-	tail_node = (*list)->prev;
-
-	new_node->next = *list;
-	(*list)->prev = new_node;
-	new_node->prev = tail_node;
-	tail_node->next = new_node;
-
-	*list = new_node;
+		*list = new_node;
+	}
 
 	return (new_node);
 }
