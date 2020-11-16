@@ -42,7 +42,7 @@ List *add_node_end(List **list, char *str)
 
 	/** Creating a new node  of type List */
 	new_node = create_node(str);
-	if(!new_node)
+	if (!new_node)
 		return (NULL);
 
 	/** Checking if list is empty */
