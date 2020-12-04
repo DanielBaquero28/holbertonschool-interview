@@ -5,6 +5,12 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <limits.h>
+
+/** HELPER MACROS */
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
+#define ABS(x) ((x) < 0 ? (x * -1) : (x))
+
 
 /**
  * struct binary_tree_s - Binary tree node
