@@ -8,3 +8,4 @@ main_*.py
 *-main.js
 __pycache__/
 *_main.py
+.DS_Store
