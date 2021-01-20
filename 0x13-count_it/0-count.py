@@ -18,7 +18,7 @@ def count_words(subreddit, word_list, next_page=None, kw_count={}, kw_dup={}):
                 subreddit, next_page), headers=headers)
     else:
         response = requests.get(
-            'https://rediit.com/r/{}/hot.json'.format(
+            'https://reddit.com/r/{}/hot.json'.format(
                 subreddit), headers=headers)
 
     if response.status_code == 404:
