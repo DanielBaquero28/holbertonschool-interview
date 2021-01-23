@@ -14,18 +14,16 @@ def count_words(subreddit, word_list, next_page=None, kw_count={}, kw_dup={}):
 
     if next_page:
         response = requests.get(
-            'https://reddit.com/r/{}/hot.json?after={}'.format(
-                subreddit, next_page), headers=headers)
+            'https://reddit.com/r/' + subreddit + '/hot.json?after=' +
+            next_page, headers=headers)
     else:
         response = requests.get(
-            'https://reddit.com/r/{}/hot.json'.format(
-                subreddit), headers=headers)
+            'https://reddit.com/r/' + subreddit + '/hot.json', headers=headers)
 
     if response.status_code == 404:
         return
 
-    has_items = bool(kw_count)
-    if not has_items:
+    if kw_count == {}:
         for kw in word_list:
             kw_count[kw] = 0
             kw_dup[kw] = word_list.count(kw)
@@ -48,7 +46,7 @@ def count_words(subreddit, word_list, next_page=None, kw_count={}, kw_dup={}):
     if next_page:
         count_words(subreddit, word_list, next_page, kw_count, kw_dup)
     else:
-        for key, value in kw_count.items():
+        for key, value in kw_dup.items():
             if value > 1:
                 kw_count[key] *= value
 
@@ -57,4 +55,4 @@ def count_words(subreddit, word_list, next_page=None, kw_count={}, kw_dup={}):
 
         for sort in final_sort:
             if sort[1] > 0:
-                print('{}: {}'.format(sort[0], res[1]))
+                print('{}: {}'.format(sort[0], sort[1]))
